@@ -1,0 +1,25 @@
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: #1DA1F2;
+    gap: 50px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    transition: .3s;
+    font-size: 1.5rem;
+    padding: 16px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+}
+nav a svg{
+    margin-right: 0.5rem;
+}
+nav a:hover {
+    background-color: #fff;
+    color: #1DA1F2;
+}
