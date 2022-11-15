@@ -7,12 +7,17 @@ import { faPenNib } from '@fortawesome/free-solid-svg-icons';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 
 
-const Navbar = () => {
+const Navbar = ({isAuth}) => {
   return (
     <nav>
         <Link to='/'><FontAwesomeIcon icon={faHouseUser} />ホーム</Link>
         <Link to='/createpost'><FontAwesomeIcon icon={faPenNib} />記事投稿</Link>
-        <Link to='/login'><FontAwesomeIcon icon={faRightToBracket} />ログイン</Link>
+        {/* 状態変数isAuthが、true or false　を確認し、それぞれの処理を三項演算子で記入 */}
+        {!isAuth ? (
+            <Link to='/login'><FontAwesomeIcon icon={faRightToBracket} />ログイン</Link> 
+            ) : (
+            <Link to='/logout'><FontAwesomeIcon icon={faRightToBracket} />ログアウト</Link>
+        )}
     </nav>
   )
 }

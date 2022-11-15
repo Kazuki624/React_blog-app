@@ -13,7 +13,7 @@ function App() {
 
   return (
     <Router>
-      <Navbar />
+      <Navbar isAuth={isAuth}/> {/* ログイン時：isAuth =true ,　ログアウト時：isAuth=false をプロップスで渡す*/}
       <Routes>
         <Route  path='/' element={<Home />} />
         <Route  path='/createpost' element={<CreatePost />} />

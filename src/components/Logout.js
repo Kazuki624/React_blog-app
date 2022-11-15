@@ -8,8 +8,8 @@ const Logout = ({ setIsAuth }) => {
     const logout = ()  =>   {
         // ログアウト
         signOut(auth).then(() => {
-            localStorage.clear();
-            setIsAuth(false)
+            localStorage.clear(); //ログイン時のLocalStorageの値を無くす
+            setIsAuth(false); //状態変数のsetIsAuthの値をfalseにする
             navigate('/login')
         })
         
