@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import {collection,deleteDoc,doc,getDocs} from "firebase/firestore"
 import {auth, db} from "../firebase"
 import "./Home.css"
-import { async } from '@firebase/util'
 
 const Home = () => {
     const [postList, setPostList] = useState([])
