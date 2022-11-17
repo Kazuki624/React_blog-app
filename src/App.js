@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false) //ログインしているかしていないかを管理
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth")) //ログインしているかしていないかを管理
 
   return (
     <Router>
