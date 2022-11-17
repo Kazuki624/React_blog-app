@@ -16,7 +16,7 @@ function App() {
       <Navbar isAuth={isAuth}/> {/* ログイン時：isAuth =true ,　ログアウト時：isAuth=false をプロップスで渡す*/}
       <Routes>
         <Route  path='/' element={<Home />} />
-        <Route  path='/createpost' element={<CreatePost />} />
+        <Route  path='/createpost' element={<CreatePost isAuth/>} />
         <Route  path='/login' element={<Login setIsAuth={setIsAuth}/>} /> {/* propsでlogin.jsに渡す*/}
         <Route  path='/logout' element={<Logout setIsAuth={setIsAuth}/>} />
       </Routes>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {collection,getDocs} from "firebase/firestore"
+import {collection,doc,getDocs} from "firebase/firestore"
 import {db} from "../firebase"
 import "./Home.css"
 
@@ -13,10 +13,11 @@ const Home = () => {
             // console.log(data.docs)
             // console.log(data.docs.map((doc) => ({doc})))
             // console.log(data.docs.map((doc) => ({...doc.data(), id:doc.id}))) //data関数で中身のデータを取得してくる
-            setPostList((data.docs.map((doc) => ({...doc.data(), id:doc.id}))))
+            // setPostList((data.docs.map((doc) => ({...doc.data(), id:doc.id}))))
+            setPostList(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
         }
         getPosts()
-    })
+    },)
   return (
     <div className='homePage'>
         {postList.map((post) => {

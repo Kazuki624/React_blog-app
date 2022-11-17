@@ -1,16 +1,16 @@
 import { addDoc, collection } from 'firebase/firestore';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { auth, db } from '../firebase';
 import "./CreatePost.css";
 import { useNavigate } from 'react-router-dom';
 
-const CreatePost = () => {
+const CreatePost = ({isAuth}) => {
     //変数を格納するための状態変数をuseStateで宣言
     const [title, setTitle] = useState();
     const [postText, setPostText] = useState();
     const navigate = useNavigate();
 
-    const createPost = async () => {
+    const createPost = async ( ) => {
         await addDoc (collection(db, "posts"), {
             title :title,
             postText: postText,
@@ -21,6 +21,11 @@ const CreatePost = () => {
         })
         navigate("/")
     }
+    useEffect(()  =>  {
+        if(!isAuth){
+            navigate("/login")
+        }
+    })
   return (
     <div className='createPostPage'>
         <div className='postContainer'>
