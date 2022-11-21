@@ -19,6 +19,7 @@ function App() {
         <Route  path='/createpost' element={<CreatePost isAuth/>} />
         <Route  path='/login' element={<Login setIsAuth={setIsAuth}/>} /> {/* propsでlogin.jsに渡す*/}
         <Route  path='/logout' element={<Logout setIsAuth={setIsAuth}/>} />
+        gitHub deploy
       </Routes>
     </Router>
   );
